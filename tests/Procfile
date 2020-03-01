@@ -1,1 +1,0 @@
-release: bash ./deploy.sh
