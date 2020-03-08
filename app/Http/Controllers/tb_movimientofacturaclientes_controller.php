@@ -10,7 +10,7 @@ class tb_movimientofacturaclientes_controller extends Controller
   public function index(){
     $tb_movimientofacturacliente_obj = tb_movimientofacturacliente_obj::get();
     $result = new class{};
-    $result->movimientosfacturacliente =  $tb_movimientofacturacliente_obj;
+    $result->movimientosfacturasclientes =  $tb_movimientofacturacliente_obj;
     return response()->json($result,200);
   }
 }
