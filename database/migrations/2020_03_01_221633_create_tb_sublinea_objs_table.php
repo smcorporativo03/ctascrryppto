@@ -15,7 +15,7 @@ class CreateTbSublineaObjsTable extends Migration
   {
     Schema::create('tb_sublinea_objs', function (Blueprint $table) {
       $table->increments('id')->unsigned();
-      $table->integer('idLinea');
+      $table->integer('idLinea')->unsigned();;
       $table->string('descripcion',25);
       $table->string('abreviatura',15);
       $table->boolean('estado')->default(true);
