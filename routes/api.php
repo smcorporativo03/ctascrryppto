@@ -30,7 +30,7 @@ Route::get('/condicionesventa','tb_condicionventas_controller@index');
 Route::get('/productos','tb_productos_controller@index');
 Route::get('/clientes','tb_clientes_controller@index');
 Route::get('/proveedores','tb_proveedors_controller@index');
-Route::get('/facurasclientes','tb_facuraclientes_controller@index');
+Route::get('/facturasclientes','tb_facturaclientes_controller@index');
 Route::get('/facturasproveedores','tb_facturaproveedors_controller@index');
 Route::get('/ingresosalmacen','tb_ingresoalmacens_controller@index');
 Route::get('/salidasalmacen','tb_salidaalmacens_controller@index');
