@@ -18,7 +18,7 @@ class CreateTbProductoObjsTable extends Migration
       $table->string('codigoSKU',15)->nullable();
       $table->string('descripcion',50);
       $table->string('abreviatura',25);
-      $table->integer('idSigubLinea')->unsigned();
+      $table->integer('idSubLinea')->unsigned();
       $table->integer('idUnidadMedida')->unsigned();
       $table->integer('idMarca')->nullable()->unsigned();
       $table->boolean('estado')->default(true);
