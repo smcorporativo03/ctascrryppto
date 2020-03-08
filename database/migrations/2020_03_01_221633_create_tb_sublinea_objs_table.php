@@ -20,6 +20,7 @@ class CreateTbSublineaObjsTable extends Migration
       $table->string('abreviatura',15);
       $table->boolean('estado')->default(true);
       $table->timestamps();
+      $table->foreign('idLinea')->references('id')->on('tb_linea_objs');
     });
   }
 

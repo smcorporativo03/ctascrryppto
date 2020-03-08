@@ -25,7 +25,7 @@ class CreateTbMovimientopresupuestoObjsTable extends Migration
       $table->decimal('impuesto',13,4);
       $table->decimal('totalNeto',13,4);
       $table->timestamps();
-      $table->foreign('idPresupuesto')->references('id')->on('tb_movimientopresupuesto_objs');
+      $table->foreign('idPresupuesto')->references('id')->on('tb_presupuesto_objs');
     });
   }
 
