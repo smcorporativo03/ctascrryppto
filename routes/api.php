@@ -55,7 +55,7 @@ Route::post('/condicionventa','tb_condicionventa_controller@store');
 Route::post('/producto','tb_producto_controller@store');
 Route::post('/cliente','tb_cliente_controller@store');
 Route::post('/proveedor','tb_proveedor_controller@store');
-Route::post('/facuracliente','tb_facuracliente_controller@store');
+Route::post('/facturacliente','tb_facturacliente_controller@store');
 Route::post('/facturaproveedor','tb_facturaproveedor_controller@store');
 Route::post('/ingresoalmacen','tb_ingresoalmacen_controller@store');
 Route::post('/salidaalmacen','tb_salidaalmacen_controller@store');

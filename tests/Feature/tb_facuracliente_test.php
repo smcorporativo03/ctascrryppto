@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class tb_facuracliente_test extends TestCase
+class tb_facturacliente_test extends TestCase
 {
     /**
      * A basic feature test example.

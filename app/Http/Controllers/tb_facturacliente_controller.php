@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\tb_facturacliente_obj;
 
-class tb_facuracliente_controller extends Controller
+class tb_facturacliente_controller extends Controller
 {
   public function store(Request $req){
     $facturacliente = new tb_facturacliente_obj();
