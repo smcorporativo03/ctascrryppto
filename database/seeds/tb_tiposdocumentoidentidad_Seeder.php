@@ -11,7 +11,7 @@ class tb_tiposdocumentoidentidad_Seeder extends Seeder
      */
     public function run()
     {
-      DB::table('tb_tipodocumento_objs')->insert([[
+      DB::table('tb_tipodocumentoidentidad_objs')->insert([[
         'descripcion'=>'DNI',
         'abreviatura'=>'DNI',
         'created_at'=> date("Y-m-d H:i:s"),
