@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class tb_movimientofacturaproveedor_obj extends Model
 {
-  return $this->belongsTo('App\tb_movimientofacturaproveedor_obj');
+  public function tb_movimientofacturaproveedor_obj(){
+    return $this->belongsTo('App\tb_movimientofacturaproveedor_obj');
+  }
 }

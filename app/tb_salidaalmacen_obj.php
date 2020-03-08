@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class tb_salidaalmacen_obj extends Model
 {
-  return $this->belongsTo('App\tb_salidaalmacen_obj');
+  public function tb_salidaalmacen_obj(){
+    return $this->belongsTo('App\tb_salidaalmacen_obj');
+  }
 }

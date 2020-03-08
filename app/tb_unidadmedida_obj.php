@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class tb_unidadmedida_obj extends Model
 {
-  return $this->belongsTo('App\tb_unidadmedida_obj');
+  public function tb_unidadmedida_obj(){
+    return $this->belongsTo('App\tb_unidadmedida_obj');
+  }
 }

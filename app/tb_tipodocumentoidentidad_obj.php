@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class tb_tipodocumentoidentidad_obj extends Model
 {
-  return $this->belongsTo('App\tb_tipodocumentoidentidad_obj');
+  public function tb_tipodocumentoidentidad_obj(){
+    return $this->belongsTo('App\tb_tipodocumentoidentidad_obj');
+  }
 }

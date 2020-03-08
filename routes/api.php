@@ -17,8 +17,6 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 // Route::get('/products','ProductsController@index');
-Route::get('/bancos','tb_bancos_controller@index');
-
 Route::get('/lineas','tb_lineas_controller@index');
 Route::get('/sublineas','tb_sublineas_controller@index');
 Route::get('/formaspago','tb_formapagos_controller@index');

@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class tb_ingresoalmacen_obj extends Model
 {
-  return $this->belongsTo('App\tb_ingresoalmacen_obj');
+  public function tb_ingresoalmacen_obj(){
+    return $this->belongsTo('App\tb_ingresoalmacen_obj');
+  }
 }

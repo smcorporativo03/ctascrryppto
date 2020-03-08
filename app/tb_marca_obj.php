@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class tb_marca_obj extends Model
 {
-  return $this->belongsTo('App\tb_marca_obj');
+  public function tb_marca_obj(){
+    return $this->belongsTo('App\tb_marca_obj');
+  }
 }

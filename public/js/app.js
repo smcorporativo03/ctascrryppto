@@ -70015,8 +70015,8 @@ var ProductList = function ProductList(_ref) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var mainUrl = 'https://asf4ggd6.herokuapp.com/'; // const mainUrl='http://127.0.0.1:8000'
-
+// const mainUrl='https://asf4ggd6.herokuapp.com/'
+var mainUrl = 'http://127.0.0.1:8000';
 var apiUrl = mainUrl + '/api';
 var url = {
   mainUrl: mainUrl,

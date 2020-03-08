@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class tb_proveedor_obj extends Model
 {
-  return $this->belongsTo('App\tb_proveedor_obj');
+  public function tb_proveedor_obj(){
+    return $this->belongsTo('App\tb_proveedor_obj');
+  }
 }
