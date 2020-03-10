@@ -7,6 +7,10 @@ use App\tb_banco_obj;
 
 class tb_banco_controller extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
   public function store(Request $req){
     $banco = new tb_banco_obj();
     $banco->descripcion = $req->descripcion;

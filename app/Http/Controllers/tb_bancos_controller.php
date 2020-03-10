@@ -7,6 +7,11 @@ use App\tb_banco_obj;
 
 class tb_bancos_controller extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
+  
   public function index(){
     $tb_banco_obj = tb_banco_obj::get();
     $result = new class{};

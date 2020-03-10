@@ -7,6 +7,10 @@ use App\tb_presupuesto_obj;
 
 class tb_presupuestos_controller extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
   public function index(){
     $tb_presupuesto_obj = tb_presupuesto_obj::get();
     $result = new class{};

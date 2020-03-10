@@ -7,6 +7,10 @@ use App\tb_marca_obj;
 
 class tb_marca_controller extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
   public function store(Request $req){
     $marca = new tb_marca_obj();
     $marca->descripcion = $req->descripcion;

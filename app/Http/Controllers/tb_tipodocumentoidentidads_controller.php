@@ -7,6 +7,10 @@ use App\tb_tipodocumentoidentidad_obj;
 
 class tb_tipodocumentoidentidads_controller extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
   public function index(){
     $tb_tipodocumentoidentidad_obj = tb_tipodocumentoidentidad_obj::get();
     $result = new class{};

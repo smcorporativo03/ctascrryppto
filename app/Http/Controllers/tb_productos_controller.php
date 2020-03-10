@@ -7,6 +7,10 @@ use App\tb_producto_obj;
 
 class tb_productos_controller extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
   public function index(){
     $tb_producto_obj = tb_producto_obj::get();
     $result = new class{};

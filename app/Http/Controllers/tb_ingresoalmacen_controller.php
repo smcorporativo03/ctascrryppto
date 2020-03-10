@@ -7,6 +7,10 @@ use App\tb_ingresoalmacen_objs;
 
 class tb_ingresoalmacen_controller extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
   public function store(Request $req){
     $ingresoalmacen = new tb_ingresoalmacen_objs();
     $ingresoalmacen->fecha = $req->fecha;

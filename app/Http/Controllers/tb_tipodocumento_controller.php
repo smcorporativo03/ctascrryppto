@@ -7,6 +7,10 @@ use App\tb_tipoddocumento_obj;
 
 class tb_tipodocumento_controller extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
   public function store(Request $req){
     $tipodocumento = new tb_tipoddocumento_obj();
     $tipodocumento->descripcion = $req->descripcion;

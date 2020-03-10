@@ -7,6 +7,10 @@ use App\tb_movimientoalmacen_obj;
 
 class tb_movimientoalmacens_controller extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
   public function index(){
     $tb_movimientoalmacen_obj = tb_movimientoalmacen_obj::get();
     $result = new class{};

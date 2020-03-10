@@ -7,6 +7,10 @@ use App\tb_condicionventa_obj;
 
 class tb_condicionventas_controller extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
   public function index(){
     $tb_condicionventa_obj = tb_condicionventa_obj::get();
     $result = new class{};
