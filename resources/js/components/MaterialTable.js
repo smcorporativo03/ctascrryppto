@@ -7,8 +7,11 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      bancos:[],
       columns: [
+        {title:'Id', field:'id',editable:'never'},
+        {title:'Descripción', field:'descripcion'},
+        {title:'Abreviatura', field:'abreviatura'},
+        {title:'Estado', field:'estado'}/*
         { title: 'Name', field: 'name', editable: 'onUpdate' },
         { title: 'Surname', field: 'surname', editable: 'never' },
         { title: 'Birth Year', field: 'birthYear', type: 'numeric' },
@@ -17,20 +20,21 @@ export default class App extends Component {
           field: 'birthCity',
           lookup: { 34: 'İstanbul', 63: 'Şanlıurfa' },
         },
-      ],
-      data: [
+      */],
+      data: [/*
         { name: 'Mehmet', surname: 'Baran', birthYear: 1987, birthCity: 63 },
         { name: 'Zerya Betül', surname: 'Baran', birthYear: 2017, birthCity: 34 },
-      ]
+      */]
     }
   }
 
   async componentDidMount(){
     try {
-      let res = await fetch(`${URL.apiUrl}/bancos`)
+      let res = await fetch(`${URL.apiUrl}/bancos`,{mode: 'no-cors'})
       let data = await res.json()
+      console.log(data)
       this.setState({
-        bancos: data.bancos
+        data:data.bancos
       })
     } catch (error) {
       this.setState({
@@ -42,7 +46,7 @@ export default class App extends Component {
   render() {
     return (
       <MaterialTable
-        title="Disable Field Editable Preview"
+        title="Bancos"
         columns={this.state.columns}
         data={this.state.data}
         editable={{
@@ -51,7 +55,16 @@ export default class App extends Component {
               setTimeout(() => {
                 {
                   const data = this.state.data;
-                  data.push(newData);
+                  let config = {
+                    method:'POST',
+                    headers : {
+                      'Accept': 'application/json',
+                      'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(newData)
+                  }
+                  let res = fetch(`${URL.apiUrl}/banco`,config);
+                  data.push(res.json);
                   this.setState({ data }, () => resolve());
                 }
                 resolve()

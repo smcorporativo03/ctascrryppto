@@ -7,10 +7,6 @@ use App\tb_facturacliente_obj;
 
 class tb_facturaclientes_controller extends Controller
 {
-  public function __construct()
-  {
-    $this->middleware('auth');
-  }
   public function index(){
     $tb_facturacliente_obj = tb_facturacliente_obj::get();
     $result = new class{};

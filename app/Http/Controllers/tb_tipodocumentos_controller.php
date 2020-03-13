@@ -7,10 +7,6 @@ use App\tb_tipodocumento_obj;
 
 class tb_tipodocumentos_controller extends Controller
 {
-  public function __construct()
-  {
-    $this->middleware('auth');
-  }
   public function index(){
     $tb_tipodocumento_obj = tb_tipodocumento_obj::get();
     $result = new class{};

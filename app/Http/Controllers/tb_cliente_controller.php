@@ -7,10 +7,6 @@ use App\tb_cliente_obj;
 
 class tb_cliente_controller extends Controller
 {
-  public function __construct()
-  {
-    $this->middleware('auth');
-  }
   public function store(Request $req){
     $cliente = new tb_cliente_obj();
     $cliente->idTipoDocumentoIdentidad = $req->idTipoDocumentoIdentidad; 

@@ -7,10 +7,6 @@ use App\tb_marca_obj;
 
 class tb_marcas_controller extends Controller
 {
-  public function __construct()
-  {
-    $this->middleware('auth');
-  }
   public function index(){
     $tb_marca_obj = tb_marca_obj::get();
     $result = new class{};

@@ -7,10 +7,6 @@ use App\tb_presupuesto_obj;
 
 class tb_presupuesto_controller extends Controller
 {
-  public function __construct()
-  {
-    $this->middleware('auth');
-  }
   public function store(Request $req){
     $presupuesto = new tb_presupuesto_obj();
     $presupuesto->fecha = $req->fecha;

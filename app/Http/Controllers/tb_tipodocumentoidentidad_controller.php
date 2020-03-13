@@ -7,10 +7,6 @@ use App\tb_tipodocumentoidentidad_obj;
 
 class tb_tipodocumentoidentidad_controller extends Controller
 {
-  public function __construct()
-  {
-    $this->middleware('auth');
-  }
   public function store(Request $req){
     $tipodocumentoidentidad = new tb_tipodocumentoidentidad_obj();
     $tipodocumentoidentidad->descripcion = $req->descripcion;

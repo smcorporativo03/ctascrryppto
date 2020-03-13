@@ -7,10 +7,6 @@ use App\tb_proveedor_obj;
 
 class tb_proveedor_controller extends Controller
 {
-  public function __construct()
-  {
-    $this->middleware('auth');
-  }
   public function store(Request $req){
     $proveedor = new tb_proveedor_obj();
     $proveedor->idTipoDocumentoIdentidad = $req->idTipoDocumentoIdentidad;

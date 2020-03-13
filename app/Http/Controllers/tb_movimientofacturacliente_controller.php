@@ -7,10 +7,6 @@ use App\tb_movimientofacturacliente_obj;
 
 class tb_movimientofacturacliente_controller extends Controller
 {
-  public function __construct()
-  {
-    $this->middleware('auth');
-  }
   public function store(Request $req){
     $movimientofacturacliente = new tb_movimientofacturacliente_obj();
     $movimientofacturacliente->tipoMovimiento = $req->tipoMovimiento;

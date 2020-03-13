@@ -7,10 +7,6 @@ use App\tb_movimientopresupuesto_obj;
 
 class tb_movimientopresupuesto_controller extends Controller
 {
-  public function __construct()
-  {
-    $this->middleware('auth');
-  }
   public function store(Request $req){
     $movimientopresupuesto = new tb_movimientopresupuesto_obj();
     $movimientopresupuesto->tipoMovimiento = $req->tipoMovimiento;

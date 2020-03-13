@@ -7,10 +7,6 @@ use App\tb_detsalidaalmacen_obj;
 
 class tb_detsalidaalmacens_controller extends Controller
 {
-  public function __construct()
-  {
-    $this->middleware('auth');
-  }
   public function index(){
     $tb_detsalidaalmacen_obj = tb_detsalidaalmacen_obj::get();
     $result = new class{};

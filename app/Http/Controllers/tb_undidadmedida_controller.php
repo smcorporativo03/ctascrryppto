@@ -7,10 +7,6 @@ use App\tb_unidadmedida_obj;
 
 class tb_undidadmedida_controller extends Controller
 {
-  public function __construct()
-  {
-    $this->middleware('auth');
-  }
   public function store(Request $req){
     $unidadmedida = new tb_unidadmedida_obj();
     $unidadmedida->descripcion = $req->descripcion;

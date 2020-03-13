@@ -7,10 +7,6 @@ use App\tb_moneda_obj;
 
 class tb_moneda_controller extends Controller
 {
-  public function __construct()
-  {
-    $this->middleware('auth');
-  }
   public function store(Request $req){
     $moneda = new tb_moneda_obj();
     $moneda->descripcion = $req->descripcion;

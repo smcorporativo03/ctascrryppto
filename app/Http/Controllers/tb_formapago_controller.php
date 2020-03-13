@@ -7,10 +7,6 @@ use App\tb_formapago_obj;
 
 class tb_formapago_controller extends Controller
 {
-  public function __construct()
-  {
-    $this->middleware('auth');
-  }
   public function store(Request $req){
     $formapago = new tb_formapago_obj();
     $formapago->descripcion = $req->descripcion;

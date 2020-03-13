@@ -7,10 +7,6 @@ use App\tb_linea_obj;
 
 class tb_lineas_controller extends Controller
 {
-  public function __construct()
-  {
-    $this->middleware('auth');
-  }
   public function index(){
     $tb_linea_obj = tb_linea_obj::get();
     $result = new class{};

@@ -7,10 +7,6 @@ use App\tb_movimientoalmacen_obj;
 
 class tb_movimientoalmacen_controller extends Controller
 {
-  public function __construct()
-  {
-    $this->middleware('auth');
-  }
   public function store(Request $req){
     $movimientoalmacen = new tb_movimientoalmacen_obj();
     $movimientoalmacen->tipoMovimiento = $req->tipoMovimiento;

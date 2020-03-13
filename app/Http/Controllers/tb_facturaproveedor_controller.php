@@ -7,10 +7,6 @@ use App\tb_facturaproveedor_obj;
 
 class tb_facturaproveedor_controller extends Controller
 {
-  public function __construct()
-  {
-    $this->middleware('auth');
-  }
   public function store(Request $req){
     $facturaproveedor = new tb_facturaproveedor_obj();
     $facturaproveedor->fecha = $req->fecha;
