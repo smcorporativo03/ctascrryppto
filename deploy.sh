@@ -5,4 +5,4 @@ php artisan migrate:fresh
 php artisan db:seed
 
 #Refresh Url
-npm run development
+#npm run development
