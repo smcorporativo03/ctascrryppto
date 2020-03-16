@@ -7,7 +7,7 @@ use App\tb_banco_obj;
 
 class tb_banco_controller extends Controller
 {
-  header('Access-Control-Allow-Methods: OPTIONS,POST,GET')
+  // header('Access-Control-Allow-Methods: OPTIONS,POST,GET')
   public function store(Request $req){
     $banco = new tb_banco_obj();
     $banco->descripcion = $req->descripcion;

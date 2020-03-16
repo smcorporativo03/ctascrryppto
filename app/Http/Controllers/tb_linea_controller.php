@@ -7,7 +7,7 @@ use App\tb_linea_obj;
 
 class tb_linea_controller extends Controller
 {
-  header('Access-Control-Allow-Methods: OPTIONS,POST,GET')
+  // header('Access-Control-Allow-Methods: OPTIONS,POST,GET')
   public function store(Request $req){
     $linea = new tb_linea_obj();
     $linea->descripcion = $req->descripcion;
