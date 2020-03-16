@@ -23,7 +23,14 @@ export default class MaterialTableGestDB extends Component {
 
   async componentDidMount(){
     try {
-      let res = await fetch(`${URL.apiUrl}${this.state.get.getAll}`,{ mode: 'no-cors'})
+      let config = {
+        headers:{
+          'Access-Control-Allow-Origin': process.env.MIX_APP_URL,
+          'Access-Control-Allow-Headers': 'Content-Type',
+          'Access-Control-Allow-Methods': 'OPTIONS,POST,GET'
+        }
+      }
+      let res = await fetch(`${URL.apiUrl}${this.state.get.getAll}`,config)
       let data = await res.json()
       this.setState({
         data: data
