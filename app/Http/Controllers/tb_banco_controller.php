@@ -11,7 +11,13 @@ class tb_banco_controller extends Controller
     $banco = new tb_banco_obj();
     $banco->descripcion = $req->descripcion;
     $banco->abreviatura = $req->abreviatura;
+    $banco->estado = 1;
     $banco->save();
     return response()->json($banco,201);
+  }
+  public function index(){
+    $tb_banco_obj = tb_banco_obj::get();
+    $result = $tb_banco_obj;
+    return response()->json($result,200);
   }
 }

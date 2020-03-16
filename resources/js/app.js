@@ -12,5 +12,6 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-require('./components/Example');
-require('./components/MaterialTable');
+// require('./components/Example');
+require('./components/tb_bancos');
+require('./components/tb_lineas');

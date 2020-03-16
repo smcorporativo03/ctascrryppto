@@ -17,7 +17,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 // Route::get('/products','ProductsController@index');
-Route::get('/lineas','tb_lineas_controller@index');
+Route::get('/lineas','tb_linea_controller@index');
+Route::get('/bancos','tb_banco_controller@index');
+
 Route::get('/sublineas','tb_sublineas_controller@index');
 Route::get('/formaspago','tb_formapagos_controller@index');
 Route::get('/marcas','tb_marcas_controller@index');
@@ -25,7 +27,6 @@ Route::get('/monedas','tb_monedas_controller@index');
 Route::get('/tiposdocumentos','tb_tipodocumentos_controller@index');
 Route::get('/tiposdocumentosidentidad','tb_tipodocumentoidentidads_controller@index');
 Route::get('/undidadesmedida','tb_undidadmedidas_controller@index');
-Route::get('/bancos','tb_bancos_controller@index');
 Route::get('/condicionesventa','tb_condicionventas_controller@index');
 Route::get('/productos','tb_productos_controller@index');
 Route::get('/clientes','tb_clientes_controller@index');

@@ -18,7 +18,9 @@
 			</div>
 		</div>
     <div class="col-md-12">
-      <div id="react-material-table"></div>
+      <MaterialTableGestDB />
+      <div id="tb_bancos"></div>
+      <div id="tb_lineas"></div>
     </div>
 	</div>
 </div>

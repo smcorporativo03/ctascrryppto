@@ -1,40 +1,54 @@
-import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
+import React, { Component } from 'react';
 import MaterialTable from 'material-table'
 import URL from '../url'
 
-export default class App extends Component {
+export default class MaterialTableGestDB extends Component {
+  /*
+  {
+    objentity={materialtable:{tblTitle:'',columnas[]},GET:{},POST:{}}
+  }
+  */
   constructor(props) {
     super(props);
-    this.state = {
-      columns: [
-        {title:'Id', field:'id',editable:'never'},
-        {title:'Descripción', field:'descripcion'},
-        {title:'Abreviatura', field:'abreviatura'},
-        {title:'Estado', field:'estado'}/*
-        { title: 'Name', field: 'name', editable: 'onUpdate' },
-        { title: 'Surname', field: 'surname', editable: 'never' },
-        { title: 'Birth Year', field: 'birthYear', type: 'numeric' },
-        {
-          title: 'Birth Place',
-          field: 'birthCity',
-          lookup: { 34: 'İstanbul', 63: 'Şanlıurfa' },
-        },
-      */],
-      data: [/*
-        { name: 'Mehmet', surname: 'Baran', birthYear: 1987, birthCity: 63 },
-        { name: 'Zerya Betül', surname: 'Baran', birthYear: 2017, birthCity: 34 },
-      */]
+    this.state={
+      title:props.objentity.materialtable.tblTitle,
+      data:[],
+      columns:props.objentity.materialtable.columnas,
+      get:props.objentity.GET,
+      post:props.objentity.POST,
+      error:null
     }
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   async componentDidMount(){
     try {
-      let res = await fetch(`${URL.apiUrl}/bancos`,{mode: 'no-cors'})
+      let res = await fetch(`${URL.apiUrl}${this.state.get.getAll}`)
       let data = await res.json()
-      console.log(data)
       this.setState({
-        data:data.bancos
+        data: data
+      })
+    } catch (error) {
+      this.setState({
+        error
+      })
+    }
+  }
+
+  async handleSubmit(newData){
+    try {
+      let config = {
+        method:'POST',
+        headers : {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newData)
+      }
+      let res = await fetch(`${URL.apiUrl}${this.state.post.addNew}`,config)
+      let resdata = await res.json()
+      this.setState({
+        data:this.state.data.concat(resdata)
       })
     } catch (error) {
       this.setState({
@@ -46,30 +60,14 @@ export default class App extends Component {
   render() {
     return (
       <MaterialTable
-        title="Bancos"
+        title={this.state.title}
         columns={this.state.columns}
         data={this.state.data}
         editable={{
-          onRowAdd: newData =>
-            new Promise((resolve, reject) => {
-              setTimeout(() => {
-                {
-                  const data = this.state.data;
-                  let config = {
-                    method:'POST',
-                    headers : {
-                      'Accept': 'application/json',
-                      'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(newData)
-                  }
-                  let res = fetch(`${URL.apiUrl}/banco`,config);
-                  data.push(res.json);
-                  this.setState({ data }, () => resolve());
-                }
-                resolve()
-              }, 1000)
-            }),
+          onRowAdd: newData => new Promise((resolve,reject)=>{
+            setTimeout(()=>{this.handleSubmit(newData)},1000)
+            resolve()
+          }),
           onRowUpdate: (newData, oldData) =>
             new Promise((resolve, reject) => {
               setTimeout(() => {
@@ -98,8 +96,4 @@ export default class App extends Component {
       />
     )
   }
-}
-
-if (document.getElementById('react-material-table')) {
-  ReactDOM.render(<App />, document.getElementById('react-material-table'));
 }
