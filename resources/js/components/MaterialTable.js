@@ -23,6 +23,7 @@ export default class MaterialTableGestDB extends Component {
 
   async componentDidMount(){
     try {
+      console.log(`${URL.apiUrl}${this.state.get.getAll}`)
       let res = await fetch(`${URL.apiUrl}${this.state.get.getAll}`)
       let data = await res.json()
       this.setState({
